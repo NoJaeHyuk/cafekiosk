@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 @Service
 public class OrderService {
@@ -26,6 +26,7 @@ public class OrderService {
     private final ProductRepository productRepository;
     private final StockRepository stockRepository;
 
+    @Transactional
     public OrderResponse createOrder(OrderCreateRequest request, LocalDateTime registeredDatetime) {
         List<String> productNumbers = request.getProductNumbers();
         List<Product> products = findProductsBy(

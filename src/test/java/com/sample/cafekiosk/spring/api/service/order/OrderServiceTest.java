@@ -9,6 +9,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.tuple;
 
 import com.sample.cafekiosk.spring.api.controller.order.request.OrderCreateRequest;
+import com.sample.cafekiosk.spring.api.service.order.OrderService;
 import com.sample.cafekiosk.spring.api.service.order.response.OrderResponse;
 import com.sample.cafekiosk.spring.domain.order.OrderRepository;
 import com.sample.cafekiosk.spring.domain.orderproduct.OrderProductRepository;
